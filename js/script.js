@@ -55,7 +55,7 @@ createApp  ({
                     clearInterval(this.autoPlay)
                 },
                 play(){
-                    setInterval(this.prevImage,3000);
+                this.autoPlay = setInterval(this.prevImage,3000);
                 }
     },
     mounted(){
