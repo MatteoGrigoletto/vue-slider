@@ -3,6 +3,7 @@ const { createApp }  = Vue
 createApp  ({
     data(){
         return{
+               
                 active: 0,
                 slides:  [
                     {
@@ -50,9 +51,15 @@ createApp  ({
                 clickImage(index){
                     this.active = index;
                 },
+                stopPlay(){
+                    clearInterval(this.autoPlay)
+                },
+                play(){
+                    setInterval(this.prevImage,3000);
+                }
     },
     mounted(){
-        let play = setInterval(this.prevImage,3000);
+    this.autoPlay =   setInterval(this.prevImage,3000);
     },
 }).mount('#app')
 
