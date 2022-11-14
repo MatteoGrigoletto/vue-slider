@@ -47,7 +47,11 @@ createApp  ({
                         this.active++;
                     }
                 },
-    }
+                
+    },
+    mounted(){
+        let play = setInterval(this.prevImage,3000);
+    },
 }).mount('#app')
 
 
